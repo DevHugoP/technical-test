@@ -1,14 +1,12 @@
-// components/dashboard/PatientItem.vue
 <template>
-  <li class="patient-item" :class="{ active }" @click="$emit('click')">
+  <li class="patient-item" :class="{ active }">
     <div class="patient-info">
-      <img :src="require(`@/assets/patients/${patient.avatar}`)" :alt="patient.name">
+      <img :src="`/src/assets/patients/${patient.avatar}`" :alt="patient.name" />
       <div>
         <p class="patient-name">{{ patient.name }}</p>
         <p class="patient-details">{{ patient.gender }}, {{ patient.age }}</p>
       </div>
     </div>
-    <BaseIconButton icon="more-vertical.svg" />
   </li>
 </template>
 
@@ -30,10 +28,8 @@ export default {
       default: false
     }
   },
-  emits: ['click']
-}
+};
 </script>
-
 <style scoped>
 .patient-item {
   display: flex;

@@ -1,44 +1,46 @@
-
-// components/dashboard/VitalSignCard.vue
 <template>
-  <div class="vital-card" :class="{ 'status-low': isLowStatus }">
-    <div class="vital-icon">
-      <img :src="require(`@/assets/icons/${vitalSign.icon}`)" :alt="vitalSign.name">
-    </div>
-    <div class="vital-info">
-      <h4>{{ vitalSign.name }}</h4>
-      <div class="vital-value">{{ vitalSign.value }}</div>
-      <div class="vital-status" :class="statusClass">
-        <span v-if="isLowStatus">▼</span>
-        {{ vitalSign.status }}
+    <div class="vital-card" :class="{ 'status-low': isLowStatus }">
+      <div class="vital-icon">
+        <img v-if="iconSrc" :src="iconSrc" :alt="vitalSign.name" />
+      </div>
+      <div class="vital-info">
+        <h4>{{ vitalSign.name }}</h4>
+        <div class="vital-value">{{ vitalSign.value }}</div>
+        <div class="vital-status" :class="statusClass">
+          <span v-if="isLowStatus">▼</span>
+          {{ vitalSign.status }}
+        </div>
       </div>
     </div>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'VitalSignCard',
-  props: {
-    vitalSign: {
-      type: Object,
-      required: true
-    }
-  },
-  computed: {
-    isLowStatus() {
-      return this.vitalSign.status.includes('Lower');
+  </template>
+  
+  <script>
+  const icons = import.meta.glob('@/assets/icons/*.svg', { eager: true });
+  
+  export default {
+    name: 'VitalSignCard',
+    props: {
+      vitalSign: {
+        type: Object,
+        required: true
+      }
     },
-    statusClass() {
-      if (this.vitalSign.status === 'Normal') return 'status-normal';
-      if (this.vitalSign.status.includes('Lower')) return 'status-low';
-      if (this.vitalSign.status.includes('Higher')) return 'status-high';
-      return '';
+    computed: {
+      isLowStatus() {
+        return this.vitalSign.status.includes('Lower');
+      },
+      statusClass() {
+        if (this.vitalSign.status === 'Normal') return 'status-normal';
+        if (this.vitalSign.status.includes('Lower')) return 'status-low';
+        if (this.vitalSign.status.includes('Higher')) return 'status-high';
+        return '';
+      },
+      iconSrc() {
+        return icons[`/src/assets/icons/${this.vitalSign.icon}`]?.default || null;
+      }
     }
   }
-}
-</script>
-
+  </script>
 <style scoped>
 .vital-card {
   background-color: #e8f7ff;

@@ -1,4 +1,3 @@
-// App.vue
 <template>
   <div class="app-container">
     <TechCareHeader />
@@ -25,18 +24,18 @@ export default {
     return {
       activePatient: 3, // Index du patient actif (Jessica Taylor)
       patients: [
-        { id: 1, name: 'Emily Williams', gender: 'Female', age: 18, avatar: 'emily.jpg' },
-        { id: 2, name: 'Ryan Johnson', gender: 'Male', age: 45, avatar: 'ryan.jpg' },
-        { id: 3, name: 'Brandon Mitchell', gender: 'Male', age: 36, avatar: 'brandon.jpg' },
-        { id: 4, name: 'Jessica Taylor', gender: 'Female', age: 28, avatar: 'jessica.jpg' },
-        { id: 5, name: 'Samantha Johnson', gender: 'Female', age: 56, avatar: 'samantha.jpg' },
-        { id: 6, name: 'Ashley Martinez', gender: 'Female', age: 54, avatar: 'ashley.jpg' },
-        { id: 7, name: 'Olivia Brown', gender: 'Female', age: 32, avatar: 'olivia.jpg' },
-        { id: 8, name: 'Tyler Davis', gender: 'Male', age: 19, avatar: 'tyler.jpg' },
-        { id: 9, name: 'Kevin Anderson', gender: 'Male', age: 30, avatar: 'kevin.jpg' },
-        { id: 10, name: 'Dylan Thompson', gender: 'Male', age: 36, avatar: 'dylan.jpg' },
-        { id: 11, name: 'Nathan Evans', gender: 'Male', age: 58, avatar: 'nathan.jpg' },
-        { id: 12, name: 'Mike Nolan', gender: 'Male', age: 31, avatar: 'mike.jpg' }
+        { id: 1, name: 'Emily Williams', gender: 'Female', age: 18, avatar: 'emily.png' },
+        { id: 2, name: 'Ryan Johnson', gender: 'Male', age: 45, avatar: 'ryan.png' },
+        { id: 3, name: 'Brandon Mitchell', gender: 'Male', age: 36, avatar: 'brandon.png' },
+        { id: 4, name: 'Jessica Taylor', gender: 'Female', age: 28, avatar: 'jessica.png' },
+        { id: 5, name: 'Samantha Johnson', gender: 'Female', age: 56, avatar: 'samantha.png' },
+        { id: 6, name: 'Ashley Martinez', gender: 'Female', age: 54, avatar: 'ashley.png' },
+        { id: 7, name: 'Olivia Brown', gender: 'Female', age: 32, avatar: 'olivia.png' },
+        { id: 8, name: 'Tyler Davis', gender: 'Male', age: 19, avatar: 'tyler.png' },
+        { id: 9, name: 'Kevin Anderson', gender: 'Male', age: 30, avatar: 'kevin.png' },
+        { id: 10, name: 'Dylan Thompson', gender: 'Male', age: 36, avatar: 'dylan.png' },
+        { id: 11, name: 'Nathan Evans', gender: 'Male', age: 58, avatar: 'nathan.png' },
+        { id: 12, name: 'Mike Nolan', gender: 'Male', age: 31, avatar: 'mike.png' }
       ],
       patientData: {
         // Données du patient actif (Jessica Taylor)
@@ -60,9 +59,9 @@ export default {
           ]
         },
         vitalSigns: [
-          { name: 'Respiratory Rate', value: '20 bpm', status: 'Normal', icon: 'lungs.svg' },
+          { name: 'Respiratory Rate', value: '20 bpm', status: 'Normal', icon: 'respiratory.svg' },
           { name: 'Temperature', value: '98.6°F', status: 'Normal', icon: 'temperature.svg' },
-          { name: 'Heart Rate', value: '78 bpm', status: 'Lower than Average', icon: 'heart.svg' }
+          { name: 'Heart Rate', value: '78 bpm', status: 'Lower than Average', icon: 'heartBPM.svg' }
         ],
         diagnoses: [
           { problem: 'Hypertension', description: 'Chronic high blood pressure', status: 'Under Observation' },

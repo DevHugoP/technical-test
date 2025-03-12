@@ -3,7 +3,6 @@
   <header class="header">
     <div class="logo">
       <img src="@/assets/logo.svg" alt="Tech Care Logo">
-      <h1>Tech Care</h1>
     </div>
     
     <nav class="main-nav">

@@ -1,8 +1,7 @@
 
-// components/base/BaseIconButton.vue
 <template>
   <button class="icon-button" @click="$emit('click')">
-    <img :src="require(`@/assets/icons/${icon}`)" :alt="altText || 'Icon'">
+    <img :src="`@/assets/icons/${icon}`" :alt="altText || 'Icon'">
   </button>
 </template>
 

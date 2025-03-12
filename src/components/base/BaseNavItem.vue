@@ -1,6 +1,6 @@
 <template>
   <a href="#" class="nav-item" :class="{ active }">
-    <img :src="require(`@/assets/icons/${icon}`)" :alt="label">
+    <img :src="`@/assets/icons/${icon}`" :alt="label">
     <span>{{ label }}</span>
   </a>
 </template>

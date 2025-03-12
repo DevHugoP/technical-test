@@ -8,13 +8,11 @@
       </div>
     </div>
     
-    <ul class="patients-list">
+    <ul class="patients-list"  v-if="patients.length" >
       <PatientItem 
         v-for="patient in patients" 
         :key="patient.id"
         :patient="patient"
-        :active="patient.id === activePatient"
-        @click="$emit('select-patient', patient.id)"
       />
     </ul>
   </aside>
@@ -37,6 +35,9 @@ export default {
       type: Number,
       required: true
     }
+  },
+  mounted() {
+    console.log('Patients reçus dans PatientsSidebar:', this.patients);
   },
   emits: ['select-patient']
 }

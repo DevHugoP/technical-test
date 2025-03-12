@@ -3,7 +3,7 @@
   <div class="patient-sidebar">
     <div class="patient-profile">
       <div class="profile-image">
-        <img :src="require(`@/assets/patients/${patient.avatar}`)" :alt="patient.name">
+        <img src="@/assets/user.png" :alt="patient.name">
       </div>
       
       <h2 class="patient-name">{{ patient.name }}</h2>
@@ -21,7 +21,7 @@
         
         <div class="detail-item">
           <div class="detail-icon">
-            <img src="@/assets/user.png" alt="Gender">
+            <img src="@/assets/icons/female.svg" alt="Gender">
           </div>
           <div class="detail-content">
             <span class="detail-label">Gender</span>
@@ -69,7 +69,7 @@
       <ul class="results-list">
         <li v-for="(result, index) in labResults" :key="index" class="result-item">
           <span class="result-name">{{ result.name }}</span>
-          <img :src="require(`@/assets/icons/${result.icon}`)" alt="Download" class="download-icon">
+          <img :src="(`@/assets/icons/${result.icon}`)" alt="Download" class="download-icon">
         </li>
       </ul>
     </div>
