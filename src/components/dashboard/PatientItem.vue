@@ -7,6 +7,7 @@
         <p class="patient-details">{{ patient.gender }}, {{ patient.age }}</p>
       </div>
     </div>
+    <img src="@/assets/icons/more-horizontal.svg" alt="more patient information" />
   </li>
 </template>
 

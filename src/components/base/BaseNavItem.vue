@@ -1,7 +1,7 @@
 <template>
   <a href="#" class="nav-item" :class="{ active }">
-    <img :src="`@/assets/icons/${icon}`" :alt="label">
-    <span>{{ label }}</span>
+    <img :src="`src/assets/icons/${icon}`" :alt="label">
+    <span class="nav-item-label">{{ label }}</span>
   </a>
 </template>
 
@@ -38,6 +38,10 @@ export default {
   transition: all 0.2s;
 }
 
+.nav-item .nav-item-label {
+  color: #072635
+}
+
 .nav-item img {
   width: 20px;
   height: 20px;
@@ -45,7 +49,7 @@ export default {
 }
 
 .nav-item.active {
-  background-color: #4BD6B9;
+  background-color: #01F0D0;
   color: white;
 }
 

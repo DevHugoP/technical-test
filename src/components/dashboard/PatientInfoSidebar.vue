@@ -103,8 +103,8 @@ export default {
 }
 
 .profile-image {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 1.5rem;

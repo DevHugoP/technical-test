@@ -1,12 +1,12 @@
 <template>
-    <div class="vital-card" :class="{ 'status-low': isLowStatus }">
+    <div class="vital-card" :class="statusClass">
       <div class="vital-icon">
         <img v-if="iconSrc" :src="iconSrc" :alt="vitalSign.name" />
       </div>
       <div class="vital-info">
         <h4>{{ vitalSign.name }}</h4>
         <div class="vital-value">{{ vitalSign.value }}</div>
-        <div class="vital-status" :class="statusClass">
+        <div class="vital-status" >
           <span v-if="isLowStatus">▼</span>
           {{ vitalSign.status }}
         </div>
@@ -30,9 +30,10 @@
         return this.vitalSign.status.includes('Lower');
       },
       statusClass() {
-        if (this.vitalSign.status === 'Normal') return 'status-normal';
-        if (this.vitalSign.status.includes('Lower')) return 'status-low';
-        if (this.vitalSign.status.includes('Higher')) return 'status-high';
+        console.log('this.vitalSign.status', this.vitalSign.name);
+        if (this.vitalSign.name === 'Heart Rate') return 'color-heart';
+        if (this.vitalSign.name.includes('Temperature')) return 'color-temperature';
+        if (this.vitalSign.name.includes('Respiratory Rate')) return 'color-respiratory';
         return '';
       },
       iconSrc() {
@@ -43,11 +44,10 @@
   </script>
 <style scoped>
 .vital-card {
-  background-color: #e8f7ff;
   border-radius: 10px;
   padding: 1.5rem;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
   gap: 1rem;
 }
 
@@ -56,8 +56,8 @@
 }
 
 .vital-icon {
-  width: 50px;
-  height: 50px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   background-color: white;
   display: flex;
@@ -66,8 +66,8 @@
 }
 
 .vital-icon img {
-  width: 30px;
-  height: 30px;
+  width: 96px;
+  height: 96px;
 }
 
 .vital-info h4 {
@@ -87,15 +87,16 @@
   color: #666;
 }
 
-.status-normal {
-  color: #27ae60;
+
+.color-heart {
+  background-color: #FFE6F1;
+}
+.color-respiratory {
+  background-color: #E0F3FA;
+}
+.color-temperature {
+  background-color: #FFE6E9;
 }
 
-.status-low {
-  color: #3498db;
-}
 
-.status-high {
-  color: #e74c3c;
-}
 </style>
