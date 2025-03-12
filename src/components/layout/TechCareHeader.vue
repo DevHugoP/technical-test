@@ -8,10 +8,10 @@
     
     <nav class="main-nav">
       <BaseNavItem icon="home.svg" label="Overview" :active="false" />
-      <BaseNavItem icon="users.svg" label="Patients" :active="true" />
+      <BaseNavItem icon="group.svg" label="Patients" :active="true" />
       <BaseNavItem icon="calendar.svg" label="Schedule" :active="false" />
-      <BaseNavItem icon="message.svg" label="Message" :active="false" />
-      <BaseNavItem icon="dollar.svg" label="Transactions" :active="false" />
+      <BaseNavItem icon="chat_bubble.svg" label="Message" :active="false" />
+      <BaseNavItem icon="credit_card.svg" label="Transactions" :active="false" />
     </nav>
     
     <div class="user-profile">

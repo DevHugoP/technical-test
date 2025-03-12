@@ -1,5 +1,3 @@
-
-// components/base/BaseNavItem.vue
 <template>
   <a href="#" class="nav-item" :class="{ active }">
     <img :src="require(`@/assets/icons/${icon}`)" :alt="label">
@@ -24,6 +22,7 @@ export default {
       default: false
     }
   }
+
 }
 </script>
 
